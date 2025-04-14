@@ -39,6 +39,15 @@ public class Main {
                     listProducts.remove(scanner.next());
                     break;
                 case 4:
+                    System.out.println("Segue abaixo os produtos com o numero referente ");
+                    for (int i = 0; i < listProducts.size(); i++) {
+                        System.out.println(i+" "+listProducts.get(i));
+                    }
+                    System.out.println("Digite o Numero do produto que voce gostaria de Alterar: ");
+                    int number = scanner.nextInt();
+                    System.out.println("Digite o que voce Gostaria de alterar");
+                    listProducts.add(number,scanner.next());
+                    listProducts.remove(number+1);
                     break;
                 default:
                     System.out.println("O numero que voce digitou nao e uma opcap");
