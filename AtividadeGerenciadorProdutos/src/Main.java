@@ -20,11 +20,16 @@ public class Main {
                     isOn = false;
                     break;
                 case 1:
+                    scanner.nextLine();
                     System.out.println("Digite o Nome do produto que voce gostaria de adicionar\n");
                     listProducts.add(scanner.nextLine());
                     System.out.println("Voce Adicionou a lista");
                     break;
                 case 2:
+                    for (String product:listProducts){
+                        System.out.println("O Produto "+product);
+                    }
+                    System.out.println("\n");
                     break;
                 case 3:
                     break;
