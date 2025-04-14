@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
         ArrayList<String> listProducts = new ArrayList<>();
         boolean isOn = true;
         Scanner scanner = new Scanner(System.in);
@@ -36,7 +35,13 @@ public class Main {
                     }
                     System.out.println("\n");
                     System.out.println("Digite o nome do produto de voce gostaria de retirar da listagem");
-                    listProducts.remove(scanner.next());
+                    String theProduct = scanner.next();
+                    if (listProducts.contains(theProduct)){
+                        listProducts.remove(theProduct);
+                    }
+                    else {
+                        System.out.println("O produto que voce digitou nao existe");
+                    }
                     break;
                 case 4:
                     System.out.println("Segue abaixo os produtos com o numero referente ");
@@ -45,9 +50,15 @@ public class Main {
                     }
                     System.out.println("Digite o Numero do produto que voce gostaria de Alterar: ");
                     int number = scanner.nextInt();
-                    System.out.println("Digite o que voce Gostaria de alterar");
-                    listProducts.add(number,scanner.next());
-                    listProducts.remove(number+1);
+                    if ((number<0) || (number>=listProducts.size())){
+                        System.out.println("O numero que voce digitou nao contem");
+
+                    }
+                    else {
+                        System.out.println("Digite o que voce Gostaria de alterar");
+                        listProducts.add(number, scanner.next());
+                        listProducts.remove(number + 1);
+                    }
                     break;
                 default:
                     System.out.println("O numero que voce digitou nao e uma opcap");
