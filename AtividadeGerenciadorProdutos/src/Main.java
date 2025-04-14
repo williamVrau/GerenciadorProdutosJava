@@ -20,9 +20,8 @@ public class Main {
                     isOn = false;
                     break;
                 case 1:
-                    scanner.nextLine();
                     System.out.println("Digite o Nome do produto que voce gostaria de adicionar\n");
-                    listProducts.add(scanner.nextLine());
+                    listProducts.add(scanner.next());
                     System.out.println("Voce Adicionou a lista");
                     break;
                 case 2:
@@ -32,6 +31,12 @@ public class Main {
                     System.out.println("\n");
                     break;
                 case 3:
+                    for (String product:listProducts){
+                        System.out.println("O Produto "+product);
+                    }
+                    System.out.println("\n");
+                    System.out.println("Digite o nome do produto de voce gostaria de retirar da listagem");
+                    listProducts.remove(scanner.next());
                     break;
                 case 4:
                     break;
